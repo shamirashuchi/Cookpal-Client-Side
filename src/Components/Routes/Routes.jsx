@@ -6,6 +6,7 @@ import Blog from "../Blog/Blog";
 
 import Register from "../../Register/Register";
 import Login from "../Login/Login";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,11 +25,11 @@ const router = createBrowserRouter([
   },
   {
     path: "chef",
-    element: <SpecificCard></SpecificCard>,
+    element: <PrivateRoute><SpecificCard></SpecificCard></PrivateRoute>,
     children: [
       {
         path: "/chef/:id",
-        element: <SpecificCard></SpecificCard>,
+        element: <PrivateRoute><SpecificCard></SpecificCard></PrivateRoute>,
       },
     ],
   },

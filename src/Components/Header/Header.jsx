@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./Header.css";
 import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Activelink from '../Activelink/Activelink';
+import { AuthContext } from '../../Providers/Authprovider';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -18,7 +26,9 @@ const Header = () => {
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#memes">
-           <Link to="/login"><Button variant="secondary">Login</Button></Link>
+            {user ? <Button onClick={handleLogOut} variant="secondary">Logout</Button> :
+                    <Link to="/login"><Button variant="secondary">Login</Button></Link>
+            }
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
