@@ -1,5 +1,8 @@
 import React from 'react';
+import "./Header.css";
 import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Activelink from '../Activelink/Activelink';
 
 const Header = () => {
     return (
@@ -10,12 +13,12 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
             <h2>Cookpal</h2>
           <Nav className="mx-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
+            <Activelink to="/">Home</Activelink>
+            <Activelink style={{marginleft:'20px'}}to="/blog">Blog</Activelink>
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#memes">
-            <Button variant="secondary">Login</Button>
+           <Link to="/login"><Button variant="secondary">Login</Button></Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

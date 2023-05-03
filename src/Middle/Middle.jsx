@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import ChefsCard from '../Components/ChefsCard/ChefsCard';
 
 const Middle = () => {
-    const [chefs,setChefs] = useState([]);
+    const [chefss,setChefs] = useState([]);
     useEffect( () =>{
         fetch('http://localhost:3000/chef')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setChefs(data.chefs))
         .catch(error => console.error(error))
     }, [])
     return (
         <div>
-            <h2>Component is comming</h2>
+            {
+               chefss.map(chef => <ChefsCard
+               key={chef._id}
+               chef={chef}
+               ></ChefsCard>) 
+            }
         </div>
     );
 };
