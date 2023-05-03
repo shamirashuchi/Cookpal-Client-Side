@@ -3,6 +3,8 @@ import Main from "../Main/Main";
 import Home from "../Home/Home";
 import SpecificCard from "../SpecificCard/SpecificCard";
 import Blog from "../Blog/Blog";
+
+import Register from "../../Register/Register";
 import Login from "../Login/Login";
 const router = createBrowserRouter([
   {
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
   {
     path:"/login",
     element:<Login></Login>
+  },
+  {
+    path:"/register",
+    element:<Register></Register>
   }
 ]);
 export default router;
