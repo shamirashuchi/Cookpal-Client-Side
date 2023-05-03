@@ -1,1 +1,4 @@
 - Create chef card
+- By clicking view recipe button go to details page where details data is showing
+- Many Chefs are in the home page
+- Blog page contain some question
