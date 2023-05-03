@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer';
 import { AuthContext } from '../../Providers/Authprovider';
 
 const Login = () => {
-    const { signIn,signInWithGoogle } = useContext(AuthContext);
+    const { signIn,signInWithGoogle,signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     // console.log('login page location', location)
@@ -35,6 +35,16 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+    const handlegithubSignIn = () =>{
+        signInWithGithub()
+        .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
         })
         .catch(error => {
             console.log(error);
@@ -71,8 +81,9 @@ const Login = () => {
                 </Form.Text>
             </Form>
         </Container>
-        <div style={{marginLeft:"36rem"}}>
+        <div style={{marginLeft:"36rem"}} className='d-flex'>
         <Button onClick={handleGoogleSignIn}>Google SignIn</Button>
+        <Button onClick={handlegithubSignIn}>Github SignIn</Button>
         </div>
         <Footer></Footer>
         </div>
