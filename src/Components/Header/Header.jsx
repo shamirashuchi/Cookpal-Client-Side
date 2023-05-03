@@ -22,7 +22,7 @@ const Header = () => {
             <h2>Cookpal</h2>
           <Nav className="mx-auto">
             <Activelink to="/">Home</Activelink>
-            <Activelink style={{marginleft:'20px'}}to="/blog">Blog</Activelink>
+            <Activelink  style={{marginLeft:"6rem"}} to="/blog">Blog</Activelink>
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#memes">

@@ -7,10 +7,10 @@ import Footer from '../Footer/Footer';
 import { AuthContext } from '../../Providers/Authprovider';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn,signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
+    // console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
     const handleLogin = event => {
         event.preventDefault();
@@ -28,6 +28,17 @@ const Login = () => {
             .catch(error => {
                 console.log(error);
             })
+    }
+
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
     return (
         <div>
@@ -60,6 +71,9 @@ const Login = () => {
                 </Form.Text>
             </Form>
         </Container>
+        <div style={{marginLeft:"36rem"}}>
+        <Button onClick={handleGoogleSignIn}>Google SignIn</Button>
+        </div>
         <Footer></Footer>
         </div>
     );
