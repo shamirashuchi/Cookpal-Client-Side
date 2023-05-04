@@ -9,7 +9,7 @@ const SpecificCard = () => {
     const {id} = useParams();
     const [user,setUser] = useState({})
     useEffect( () =>{
-        fetch(`http://localhost:3000/chef/${id}`)
+        fetch(`https://chef-server-shamirashuchi.vercel.app/chef/${id}`)
         .then(res => res.json())
         .then(data => setUser(data))
         .catch(error => console.error(error))
