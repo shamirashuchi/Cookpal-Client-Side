@@ -26,7 +26,7 @@ const Header = () => {
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#memes">
-            {user ? <img style={{height:"20px",width:"20px"}}src={user.PhotoURL} alt="" /> :
+            {user ? <img style={{height:"20px",width:"20px"}}src={user.photoURL} alt="" /> :
                     <Link to="/login"><Button variant="secondary">Login</Button></Link>
             }
             </Nav.Link>
