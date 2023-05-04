@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
 import { AuthContext } from '../Providers/Authprovider';
-
+import { getAuth, updateProfile } from "firebase/auth";
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser,updateUserData} = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const handleRegister = event => {
@@ -26,6 +26,16 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
+                const auth = getAuth();
+                    updateProfile(auth.currentUser, {
+                    displayName: name, photoURL: photo
+                    }).then(() => {
+                    console.log("user updated successfully")
+                    // ...
+                    }).catch((error) => {
+                    // An error occurred
+                    // ...
+                    });
                 console.log(createdUser);
                 setError('');
                 event.target.reset();

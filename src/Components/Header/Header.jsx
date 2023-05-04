@@ -6,7 +6,7 @@ import Activelink from '../Activelink/Activelink';
 import { AuthContext } from '../../Providers/Authprovider';
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut,updateUserData} = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -26,10 +26,11 @@ const Header = () => {
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#memes">
-            {user ? <Button onClick={handleLogOut} variant="secondary">Logout</Button> :
+            {user ? <img style={{height:"20px",width:"20px"}}src={user.PhotoURL} alt="" /> :
                     <Link to="/login"><Button variant="secondary">Login</Button></Link>
             }
             </Nav.Link>
+            <Button onClick={handleLogOut} variant="secondary">Logout</Button> 
           </Nav>
         </Navbar.Collapse>
       </Container>
