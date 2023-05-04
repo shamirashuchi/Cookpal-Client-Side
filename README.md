@@ -2,3 +2,5 @@
 - By clicking view recipe button go to details page where details data is showing
 - Many Chefs are in the home page
 - Blog page contain some question
+- server live link:https://chef-server-shamirashuchi.vercel.app/
+- client live link:https://client-side-36388.web.app
