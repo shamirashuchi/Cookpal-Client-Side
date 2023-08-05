@@ -10,7 +10,7 @@ const Recipecard = ({recipe}) => {
     }
   return (
     <div>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }} className='mt-5 ms-lg-0 ms-5'>
       <Card.Body>
         <Card.Title>{recipe.name}</Card.Title>
         <Card.Text>

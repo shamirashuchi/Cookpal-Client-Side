@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Blog = () => {
     return (
-        <div>
+       <div>
+        <Header></Header>
+         <div>
             <h2>What is the differences between uncontrolled and controlled components?</h2>
             <p>A controlled component is a component that is controlled by React state, while an uncontrolled component is a component that maintains its own internal state.</p>
             <h2>How to validate React props using PropTypes?</h2>
@@ -19,6 +23,8 @@ const Blog = () => {
             <p>In React, a custom hook is a reusable function that allows you to extract and reuse logic that can be shared between multiple components. Custom hooks enable you to write reusable code that encapsulates stateful logic, such as fetching data, handling events, or managing component state.
              The primary motivation for creating a custom hook is code reuse. By encapsulating logic in a custom hook, you can make it easier to share code between different components or projects. Additionally, custom hooks can help to keep your code organized and easier to maintain by reducing the complexity of your components.For example, let's say you have multiple components that need to fetch data from a server using fetch(). Rather than duplicating the logic for making API calls in each component, you can create a custom hook that encapsulates that logic, and then use that hook in each component. This not only saves time but also makes it easier to maintain and update the logic in one place.</p>
         </div>
+        <Footer></Footer>
+       </div>
     );
 };
 

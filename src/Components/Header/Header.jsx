@@ -21,16 +21,20 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
             <h2>Cookpal</h2>
           <Nav className="mx-auto">
+            <div>
             <Activelink to="/">Home</Activelink>
-            <Activelink  style={{marginLeft:"6rem"}} to="/blog">Blog</Activelink>
+            </div>
+            <div  className="ms-lg-5">
+            <Activelink to="/blog">Blog</Activelink>
+            </div>
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#memes">
             {user ? <img style={{height:"20px",width:"20px"}}src={user.photoURL} alt="" /> :
-                    <Link to="/login"><Button variant="secondary">Login</Button></Link>
+                    <Link  to="/login"><Button style={{height:"40px",width:"70px"}} variant="secondary">Login</Button></Link>
             }
             </Nav.Link>
-            <Button onClick={handleLogOut} variant="secondary">Logout</Button> 
+            <Button className='mt-2' style={{height:"40px",width:"70px"}} onClick={handleLogOut} variant="secondary">Logout</Button> 
           </Nav>
         </Navbar.Collapse>
       </Container>

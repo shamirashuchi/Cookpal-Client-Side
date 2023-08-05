@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { AuthContext } from '../../Providers/Authprovider';
+import "./Login.css"
 
 const Login = () => {
     const { signIn,signInWithGoogle,signInWithGithub } = useContext(AuthContext);
@@ -53,7 +54,8 @@ const Login = () => {
     return (
         <div>
             <Header></Header>
-            <Container className='w-25 mx-auto'>
+           <div  className='custom-width mx-auto mt-5'>
+           <Container>
             <h3>Please Login</h3>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -66,7 +68,7 @@ const Login = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Login
                 </Button>
                 <br />
@@ -81,11 +83,11 @@ const Login = () => {
                 </Form.Text>
             </Form>
         </Container>
-        <div style={{marginLeft:"36rem"}} className='d-flex'>
-        <Button onClick={handleGoogleSignIn}>Google SignIn</Button>
-        <Button onClick={handlegithubSignIn}>Github SignIn</Button>
+        <div className='my-2'>
+        <Button className='bg-secondary' onClick={handleGoogleSignIn}>Google SignIn</Button>
+        <Button className='bg-secondary ms-5' onClick={handlegithubSignIn}>Github SignIn</Button>
         </div>
-        <Footer></Footer>
+           </div>
         </div>
     );
 };

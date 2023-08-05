@@ -5,6 +5,7 @@ import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
 import { AuthContext } from '../Providers/Authprovider';
 import { getAuth, updateProfile } from "firebase/auth";
+import "./Register.css";
 const Register = () => {
     const {createUser,updateUserData} = useContext(AuthContext);
     const [error, setError] = useState('');
@@ -49,7 +50,7 @@ const Register = () => {
     return (
        <div>
         <Header></Header>
-         <Container className='w-25 mx-auto'>
+         <Container className='custom-width mx-auto'>
             <h3>Please Register</h3>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -76,7 +77,7 @@ const Register = () => {
                         name="accept"
                         label={<>Accept <Link to="/terms">Terms and Conditions</Link> </>} />
                 </Form.Group>
-                <Button variant="primary"  type="submit">
+                <Button variant="secondary"  type="submit">
                     Register
                 </Button>
                 <br />

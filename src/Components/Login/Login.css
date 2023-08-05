@@ -1,0 +1,28 @@
+/* CustomStyles.css */
+
+/* Responsive width classes */
+.custom-width {
+    width: 100%; /* Default width for extra-small and small screens */
+  }
+  
+  @media (min-width: 576px) {
+    /* For small and larger screens, set a width of 50% */
+    .custom-width {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    /* For medium and larger screens, set a width of 33.33% */
+    .custom-width {
+      width: 33.33%;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    /* For large and larger screens, set a width of 25% */
+    .custom-width {
+      width: 25%;
+    }
+  }
+  
